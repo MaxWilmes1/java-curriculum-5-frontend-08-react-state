@@ -15,7 +15,7 @@ export default function CharacterCard(props: Readonly<CharacterCardProps>) {
 
     return (
         <div onClick={goToDetails} className="character-card">
-            <img src={props.character.image} alt={props.character.name}/>
+            <img src={props.character.image} alt={"default"}/>
             <div className="character-card-info">
                 <h3>{props.character.name}</h3>
                 <p>Species: {props.character.species}</p>

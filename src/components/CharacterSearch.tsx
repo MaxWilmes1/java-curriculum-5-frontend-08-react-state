@@ -1,11 +1,15 @@
 import CharacterGallery from "./CharacterGallery.tsx";
 import {useState} from "react";
-import {characters} from "../Characters.ts";
+import {Character} from "../types/RickAndMortyCharacter.ts";
 
-export default function CharacterSearch() {
+type Props = {
+    characters: Character[]
+}
+
+export default function CharacterSearch(props: Props) {
     const [searchText, setSearchText] = useState("");
 
-    const filteredCharacters = characters
+    const filteredCharacters = props.characters
         .filter((character) => character.name.toLowerCase().includes(searchText.toLowerCase()));
     return (
         <div>
