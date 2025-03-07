@@ -1,10 +1,10 @@
-import {Link} from "react-router";
+import {NavLink} from "react-router";
 
 export default function Header(){
     return (
         <div>
-            <Link to={"/Home/Welcome"}>Home</Link>
-            <Link to={"/characters"}>Character Gallery</Link>
+            <NavLink to={"/Home/Welcome"}>Home</NavLink>
+            <NavLink to={"/characters"}>Character Gallery</NavLink>
         </div>
     )
 }
