@@ -4,6 +4,8 @@ import {Character} from "../types/RickAndMortyCharacter.ts";
 
 type Props = {
     characters: Character[]
+    nextPage: () => void
+    previousPage: () => void
 }
 
 export default function CharacterSearch(props: Props) {
@@ -16,7 +18,8 @@ export default function CharacterSearch(props: Props) {
             <input type="text" onChange={(e) => setSearchText(e.target.value)} placeholder="Search for a character"/>
             {
                 filteredCharacters.length > 0
-                    ? <CharacterGallery characters={filteredCharacters}/>
+                    ? <CharacterGallery characters={filteredCharacters} nextPage={props.nextPage}
+                                        previousPage={props.previousPage}/>
                     : <p>No characters found</p>
             }
         </div>
